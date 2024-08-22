@@ -17,9 +17,11 @@ search = {
     'search_completed': False
 }
 
-text_ending = {1: ''}
-text_ending.update({key: 'a' for key in [2, 3, 4]})
-text_ending.update({key: 'ов' for key in [0, 5, 6, 7, 8, 9]})
+text_ending = {
+    1: '',
+    **{key: 'a' for key in range(2, 5)},
+    **{key: 'ов' for key in [0, 5, 6, 7, 8, 9]}
+}
 
 
 def search_step(data: dict):
